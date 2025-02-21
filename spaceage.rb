@@ -13,11 +13,9 @@ puts "Neptune"
 
 planet = gets.chomp
 
-# puts "What's your age (in seconds)?"
-# ageInSeconds = gets.chomp.to_f
-ageInSeconds = 1000000000
-# puts ageInSeconds
-# ageInYears = 0.to_f
+puts "What's your age (in seconds)?"
+ageInSeconds = gets.chomp.to_f
+puts ageInSeconds
 
 PlanetAges = {
     "Mercury" => ageInSeconds / (earthSecondsTime * 0.2408467),
@@ -30,13 +28,9 @@ PlanetAges = {
     "Neptune" => ageInSeconds / (earthSecondsTime * 164.79132)
 }
 
-print PlanetAges.keys
-puts
-print PlanetAges.values
 puts "--------------------------"
 if PlanetAges.has_key?(planet)
-    puts "Ok"
-    print PlanetAges.keys
+    puts "Your #{planet}-age is #{PlanetAges[planet].round 2}"
 elsif planet == "Pluto"
     puts "Pluto is NOT a planet, try again."
 else

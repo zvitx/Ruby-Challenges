@@ -1,5 +1,5 @@
 # https://exercism.org/tracks/ruby/exercises/space-age
-earthSecondsTime = 31557600.to_f #1 year in seconds in Earth
+earth_seconds_time = 31557600.to_f #1 year in seconds in Earth
 
 puts "Choose a planet"
 puts "Mercury"
@@ -10,25 +10,26 @@ puts "Jupiter"
 puts "Saturn"
 puts "Uranus"
 puts "Neptune"
+puts "-----------------------------"
 
 planet = gets.chomp
+puts "-----------------------------"
 
 puts "What's your age (in seconds)?"
-ageInSeconds = gets.chomp.to_f
-puts ageInSeconds
+age_in_seconds = gets.chomp.to_f
 
 PlanetAges = {
-    "Mercury" => ageInSeconds / (earthSecondsTime * 0.2408467),
-    "Venus" => ageInSeconds / (earthSecondsTime * 0.61519726),
-    "Earth" => ageInSeconds / (earthSecondsTime),
-    "Mars" => ageInSeconds / (earthSecondsTime * 1.8808158),
-    "Jupiter" => ageInSeconds / (earthSecondsTime * 11.862615),
-    "Saturn" => ageInSeconds / (earthSecondsTime * 	29.447498),
-    "Uranus" => ageInSeconds / (earthSecondsTime * 84.016846),
-    "Neptune" => ageInSeconds / (earthSecondsTime * 164.79132)
+    "Mercury" => age_in_seconds / (earth_seconds_time * 0.2408467),
+    "Venus" => age_in_seconds / (earth_seconds_time * 0.61519726),
+    "Earth" => age_in_seconds / (earth_seconds_time),
+    "Mars" => age_in_seconds / (earth_seconds_time * 1.8808158),
+    "Jupiter" => age_in_seconds / (earth_seconds_time * 11.862615),
+    "Saturn" => age_in_seconds / (earth_seconds_time * 	29.447498),
+    "Uranus" => age_in_seconds / (earth_seconds_time * 84.016846),
+    "Neptune" => age_in_seconds / (earth_seconds_time * 164.79132)
 }
 
-puts "--------------------------"
+puts "-----------------------------"
 if PlanetAges.has_key?(planet)
     puts "Your #{planet}-age is #{PlanetAges[planet].round 2}"
 elsif planet == "Pluto"
